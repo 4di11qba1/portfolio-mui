@@ -1,5 +1,6 @@
 const lightColors = [
   {
+    // Blue
     primary: "#36618E",
     primaryFixed: "#36618E",
     onPrimaryContainer: "#021E36",
@@ -10,6 +11,7 @@ const lightColors = [
     surfaceContainer: "#ECEEF4",
   },
   {
+    // Green
     primary: "#3E6836",
     primaryFixed: "#3E6836",
     onPrimaryContainer: "#012101",
@@ -23,6 +25,7 @@ const lightColors = [
 
 const darkColors = [
   {
+    // Blue
     primary: "#A0CAFD",
     primaryFixed: "#36618E",
     onPrimaryContainer: "#CEE2FC",
@@ -33,6 +36,7 @@ const darkColors = [
     surfaceContainer: "#1D2024",
   },
   {
+    // Green
     primary: "#A5D396",
     primaryFixed: "#A5D396",
     onPrimaryContainer: "#C0EFB0",

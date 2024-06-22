@@ -1,0 +1,12 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.hoverable {
+  transition: all 0.5s;
+}
+
+.hoverable:hover {
+  background-color: rgba(135, 135, 135, 0.317) !important;
+  transition: all 0.5s;
+}
