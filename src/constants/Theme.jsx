@@ -6,7 +6,7 @@ const ThemeContext = createContext();
 
 export const MyThemeProvider = ({ children }) => {
   const [light, setLight] = useState(false);
-  const [accentColor, setAccentColor] = useState(0);
+  const [accentColor, setAccentColor] = useState(1);
   const [colors, setColors] = useState(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -51,7 +51,7 @@ export const MyThemeProvider = ({ children }) => {
     );
     document.documentElement.style.setProperty(
       "--surface-container",
-      colors?.SurfaceContainer
+      colors?.surfaceContainer
     );
   }, [colors]);
 

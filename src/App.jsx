@@ -4,6 +4,7 @@ import.meta.glob("/src/styles/*.(scss|css)", { eager: true });
 import FloatingButton from "./components/FloatingButton";
 import MoveToTop from "./components/MoveToTop";
 import TopNav from "./components/TopNav";
+import Home from "./screens/Home";
 
 function App() {
   const { colors } = useTheme();
@@ -30,6 +31,9 @@ function App() {
 
       {/* Content */}
       <TopNav />
+
+      {/* Home */}
+      <Home />
     </div>
   );
 }

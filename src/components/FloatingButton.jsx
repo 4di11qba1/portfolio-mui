@@ -11,6 +11,7 @@ function FloatingButton() {
         <div
           className="nd4 nds hoverable"
           style={{ backgroundColor: colors?.primary }}
+          onClick={() => setAccentColor(2)}
         >
           <div className="letter" style={{ backgroundColor: "red" }}></div>
         </div>
@@ -18,6 +19,7 @@ function FloatingButton() {
         <div
           className="nd3 nds hoverable"
           style={{ backgroundColor: colors?.primary }}
+          onClick={() => setAccentColor(1)}
         >
           <div className="letter" style={{ backgroundColor: "green" }}></div>
         </div>
@@ -25,6 +27,7 @@ function FloatingButton() {
         <div
           className="nd1 nds hoverable"
           style={{ backgroundColor: colors?.primary }}
+          onClick={() => setAccentColor(0)}
         >
           <div className="letter" style={{ backgroundColor: "blue" }}></div>
         </div>
