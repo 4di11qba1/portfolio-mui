@@ -2,23 +2,26 @@
   display: flex;
   align-items: center;
   width: 100vw;
+  min-height: 100vh;
   flex-direction: column;
   padding: 120px 30px 0 30px;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 }
 
 .home-chip {
-  width: 90px;
-  height: 60px;
-  color: var(--secondary);
-  border-color: var(--secondary);
-  font-size: 18px;
+  width: 120px;
+  height: 50px !important;
+  border: 1px solid var(--secondary) !important;
+  color: var(--secondary) !important;
+  font-size: 18px !important;
+  border-radius: 50px !important;
 }
 
 .home-quote {
   color: var(--secondary);
-  font-size: 70px;
+  font-size: 90px;
   text-align: center;
 }
 
@@ -44,31 +47,24 @@
 }
 
 .home-rating .home-icon {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  color: var(--primary);
 }
 
 .home-rating p {
   transform: translate(0, -15px);
   width: 300px;
-}
-
-.home-rating .home-icon {
-  color: var(--primary);
-}
-
-.home-rating p {
   color: var(--secondary);
 }
 
 .hero-section {
-  position: relative;
+  position: absolute;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  align-self: flex-end;
-  transform: translate(0, -40%);
+  bottom: -35px;
 }
 
 .hero-bg {
@@ -86,4 +82,90 @@
   z-index: 2;
   width: 400px;
   height: 400px;
+}
+
+@media screen and (width: 1024px) and (height: 1366px) {
+  .hero {
+    width: 60vw;
+    height: 60vw;
+  }
+  .home-rating p {
+    font-size: 25px;
+    width: 400px;
+  }
+  .hero-bg {
+    width: 800px;
+    height: 800px;
+    margin-top: 550px;
+  }
+}
+
+@media screen and (width: 912px) and (height: 1368px) {
+  .hero {
+    height: 60vw;
+    width: 60vw;
+  }
+  .home-rating p {
+    font-size: 30px;
+    width: 400px;
+  }
+  .hero-bg {
+    width: 800px;
+    height: 800px;
+    margin-top: 550px;
+  }
+}
+
+@media screen and (width: 1024px) and (height: 600px) {
+  .hero {
+    width: 250px;
+    height: 250px;
+  }
+  .hero-bg {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media screen and (width: 853px) and (height: 1280px) {
+  .hero {
+    width: 500px;
+    height: 500px;
+  }
+  .hero-bg {
+    margin-top: 500px;
+    width: 700px;
+    height: 700px;
+  }
+  .home-rating p {
+    width: 350px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hero-section {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .home-rating {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero {
+    width: 90vw;
+    height: 90vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .home-quote {
+    font-size: 50px;
+  }
 }

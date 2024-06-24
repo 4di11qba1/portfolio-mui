@@ -24,6 +24,8 @@ function Home() {
             <Star className="home-icon" />
             <Star className="home-icon" />
             <Star className="home-icon" />
+            <Star className="home-icon" />
+            <Star className="home-icon" />
           </div>
           <p>All projects done with full client satisfaction.</p>
         </div>

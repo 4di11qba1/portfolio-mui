@@ -5,6 +5,9 @@ import FloatingButton from "./components/FloatingButton";
 import MoveToTop from "./components/MoveToTop";
 import TopNav from "./components/TopNav";
 import Home from "./screens/Home";
+import About from "./screens/About";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Services from "./screens/Services";
 
 function App() {
   const { colors } = useTheme();
@@ -17,24 +20,23 @@ function App() {
     };
   }, [colors]);
   return (
-    <div
-      style={{
-        backgroundColor: colors?.onSecondary,
-        transition: "all 0.5s",
-        width: "100vw",
-        height: "100vh",
-      }}
-    >
-      {/* Floating Buttons */}
-      <FloatingButton />
-      <MoveToTop />
+    <BrowserRouter>
+      <div className="app">
+        {/* Floating Buttons */}
+        <FloatingButton />
+        <MoveToTop />
 
-      {/* Content */}
-      <TopNav />
+        {/* Content */}
+        <TopNav />
 
-      {/* Home */}
-      <Home />
-    </div>
+        {/* Home */}
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/services" element={<Services />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
