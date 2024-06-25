@@ -1,0 +1,160 @@
+.blob-container {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  background: var(--on-secondary);
+  mix-blend-mode: color-dodge;
+  transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
+}
+
+.blob:hover {
+  box-shadow: inset 0 0 0 5px var(--secondary-container),
+    inset 50px 50px 0 0px var(--on-primary-container),
+    inset 70px 70px 0 0px var(--on-secondary),
+    inset 100px 100px 0 0px var(--surface-container);
+}
+
+@keyframes move-1 {
+  0% {
+    transform: translate(-300px, -150px) rotate(-90deg);
+    border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+  }
+  25% {
+    transform: translate(300px, 150px) rotate(45deg);
+    border-radius: 50% 50% 40% 60% / 50% 40% 60% 50%;
+  }
+  50% {
+    transform: translate(-500px, 300px) rotate(-30deg);
+    border-radius: 60% 40% 50% 50% / 40% 50% 50% 60%;
+  }
+  75% {
+    transform: translate(500px, -250px) rotate(60deg);
+    border-radius: 70% 30% 60% 40% / 30% 60% 40% 70%;
+  }
+  100% {
+    transform: translate(-200px, 200px) rotate(-10deg);
+    border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+  }
+}
+
+@keyframes move-2 {
+  0% {
+    transform: translate(100px, -150px) rotate(30deg);
+    border-radius: 34% 66% 45% 55% / 37% 46% 54% 63%;
+  }
+  25% {
+    transform: translate(-200px, 300px) rotate(-60deg);
+    border-radius: 44% 56% 55% 45% / 47% 36% 64% 53%;
+  }
+  50% {
+    transform: translate(400px, -400px) rotate(120deg);
+    border-radius: 54% 46% 65% 35% / 57% 43% 47% 53%;
+  }
+  75% {
+    transform: translate(-300px, 200px) rotate(-90deg);
+    border-radius: 64% 36% 55% 45% / 67% 33% 63% 37%;
+  }
+  100% {
+    transform: translate(400px, -250px) rotate(90deg);
+    border-radius: 74% 26% 43% 57% / 48% 56% 44% 52%;
+  }
+}
+
+@keyframes move-3 {
+  0% {
+    transform: translate(-500px, -300px) rotate(-60deg);
+    border-radius: 44% 56% 55% 45% / 47% 36% 64% 53%;
+  }
+  25% {
+    transform: translate(200px, 400px) rotate(30deg);
+    border-radius: 50% 50% 40% 60% / 50% 40% 60% 50%;
+  }
+  50% {
+    transform: translate(-600px, -400px) rotate(-120deg);
+    border-radius: 60% 40% 50% 50% / 40% 50% 50% 60%;
+  }
+  75% {
+    transform: translate(400px, 300px) rotate(90deg);
+    border-radius: 70% 30% 60% 40% / 30% 60% 40% 70%;
+  }
+  100% {
+    transform: translate(500px, 750px) rotate(170deg);
+    border-radius: 64% 36% 23% 77% / 68% 65% 35% 32%;
+  }
+}
+
+@keyframes move-4 {
+  0% {
+    transform: translate(-350px, -150px) rotate(-120deg);
+    border-radius: 34% 66% 55% 45% / 37% 46% 54% 63%;
+  }
+  25% {
+    transform: translate(150px, 200px) rotate(60deg);
+    border-radius: 44% 56% 55% 45% / 47% 36% 64% 53%;
+  }
+  50% {
+    transform: translate(-200px, 550px) rotate(-30deg);
+    border-radius: 54% 46% 65% 35% / 57% 43% 47% 53%;
+  }
+  75% {
+    transform: translate(300px, -350px) rotate(120deg);
+    border-radius: 64% 36% 55% 45% / 67% 33% 63% 37%;
+  }
+  100% {
+    transform: translate(500px, 500px) rotate(-60deg);
+    border-radius: 74% 26% 43% 57% / 48% 56% 44% 52%;
+  }
+}
+
+/* Assign random animation to blobs */
+.blob-1 {
+  width: 200px;
+  height: 200px;
+  animation: move-1 75s infinite alternate;
+}
+
+.blob-1:hover {
+  width: 220px;
+  height: 220px;
+}
+
+.blob-2 {
+  width: 300px;
+  height: 300px;
+  animation: move-2 75s infinite alternate;
+}
+
+.blob-2:hover {
+  width: 320px;
+  height: 320px;
+}
+
+.blob-3 {
+  width: 100px;
+  height: 100px;
+  animation: move-3 75s infinite alternate;
+}
+
+.blob-3:hover {
+  width: 120px;
+  height: 120px;
+}
+
+.blob-4 {
+  width: 140px;
+  height: 160px;
+  animation: move-4 75s infinite alternate;
+}
+
+.blob-4:hover {
+  width: 160px;
+  height: 180px;
+}
