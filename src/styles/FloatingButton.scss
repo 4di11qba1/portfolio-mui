@@ -2,6 +2,18 @@
   --floating-button-margin: 30px;
 }
 
+@media screen and (max-width: 500px) {
+  :root {
+    --floating-button-margin: 15px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  :root {
+    --floating-button-margin: 5px;
+  }
+}
+
 #floating-button {
   width: 55px;
   height: 55px;

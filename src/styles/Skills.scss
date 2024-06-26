@@ -1,0 +1,142 @@
+.skills {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 50px 30px;
+}
+
+.skills-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-content {
+  display: grid;
+  grid-template-columns: 40% auto 40%;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+.skills-column {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.skill {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+}
+
+.skill-title {
+  color: var(--primary);
+}
+
+.skill-description {
+  font-size: 15px;
+  color: var(--secondary);
+}
+
+.devicon {
+  font-size: 80px;
+  color: var(--secondary);
+}
+
+.skill-divider {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-dot-border,
+.skill-dot-inner,
+.skill-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.skill-dot-border {
+  width: 58px;
+  height: 58px;
+  background-color: var(--secondary);
+}
+
+.skill-dot-inner {
+  width: 48px;
+  height: 48px;
+  background-color: var(--on-secondary);
+}
+
+.skill-dot {
+  width: 30px;
+  height: 30px;
+  background-color: var(--secondary);
+}
+
+.skill-divider-line {
+  height: 100px;
+  width: 10px;
+  background-color: var(--primary);
+  margin-top: -1px;
+}
+
+@media screen and (max-width: 930px) {
+  .skill-description {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .devicon {
+    font-size: 7.5vw;
+  }
+  .skill-description {
+    font-size: 12px;
+  }
+  .skill-dot-border {
+    width: 5.8vw;
+    height: 5.8vw;
+  }
+  .skill-dot-inner {
+    width: 4.5vw;
+    height: 4.5vw;
+  }
+  .skill-dot {
+    width: 3vw;
+    height: 3vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .skill-divider {
+    display: none;
+  }
+  .skills-content {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .skills-content {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}

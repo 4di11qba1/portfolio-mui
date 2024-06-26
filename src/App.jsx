@@ -9,6 +9,7 @@ import About from "./screens/About";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Services from "./screens/Services";
 import Test from "./screens/Test";
+import Skills from "./screens/Skills";
 
 function App() {
   const { colors } = useTheme();
@@ -35,6 +36,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/services" element={<Services />} />
+          <Route exact path="/skills" element={<Skills />} />
           <Route exact path="/test" element={<Test />} />
         </Routes>
       </div>

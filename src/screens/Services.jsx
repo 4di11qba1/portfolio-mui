@@ -10,13 +10,19 @@ function Services() {
   const { colors } = useTheme();
 
   const changeElement = (pos) => {
-    setPosition(pos);
+    if (pos > 5) {
+      setPosition(1);
+    } else if (pos < 1) {
+      setPosition(5);
+    } else {
+      setPosition(pos);
+    }
   };
   return (
     <div className="wrapper">
       <div className="wrapper-content">
         <div className="services">
-          {/* <Blob /> */}
+          <Blob />
           <div className="services-content">
             <div className="services-header">
               <Typography component={"div"} variant="h3">
@@ -32,7 +38,9 @@ function Services() {
               </Typography>
             </div>
             <Carousel position={position} changeElement={changeElement} />
-            <Stepper position={position - 1} changeElement={changeElement} />
+            <div className="stepper-wrapper">
+              <Stepper position={position - 1} changeElement={changeElement} />
+            </div>
           </div>
         </div>
       </div>

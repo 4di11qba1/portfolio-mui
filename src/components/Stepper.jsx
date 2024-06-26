@@ -1,7 +1,10 @@
 import React from "react";
-import { MobileStepper } from "@mui/material";
+import { IconButton, MobileStepper } from "@mui/material";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import { useTheme } from "../constants/Theme";
 
 function Stepper({ position, changeElement }) {
+  const { colors } = useTheme();
   return (
     <div className="stepper">
       <MobileStepper
@@ -9,24 +12,30 @@ function Stepper({ position, changeElement }) {
         steps={5}
         position="static"
         activeStep={position}
+        className="stepper"
         sx={{
-          maxWidth: "60%",
-          flexGrow: 1,
-          backgroundColor: "transparent",
-          color: "var(--secondary)",
           "& .MuiLinearProgress-root": {
-            // Target root element for overall styling
             borderRadius: "5px",
             height: "7px",
             width: "100%",
           },
           "& .MuiLinearProgress-determinate": {
-            backgroundColor: "var(--secondary)", // Adjust background for better contrast
+            backgroundColor: "var(--secondary)",
             "& .MuiLinearProgress-bar": {
-              backgroundColor: "var(--on-secondary)", // Set progress bar color here
+              backgroundColor: "var(--on-secondary)",
             },
           },
         }}
+        nextButton={
+          <IconButton onClick={() => changeElement(position + 2)}>
+            <ArrowForward sx={{ color: colors?.secondary }} />
+          </IconButton>
+        }
+        backButton={
+          <IconButton onClick={() => changeElement(position)}>
+            <ArrowBack sx={{ color: colors?.secondary }} />
+          </IconButton>
+        }
       />
     </div>
   );
