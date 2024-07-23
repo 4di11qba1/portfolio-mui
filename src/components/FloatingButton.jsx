@@ -5,13 +5,21 @@ import { useTheme } from "../constants/Theme";
 
 function FloatingButton() {
   const { light, setLight, accentColor, setAccentColor, colors } = useTheme();
+  const setColor = (color) => {
+      localStorage.setItem("accentColor", color);
+      setAccentColor(color);
+  }
+  const changeColorMode = () => {
+      localStorage.setItem("light", !light);
+        setLight(!light);
+  };
   return (
     // <IconButton>
     <div id="container-floating">
       <div
         className="nd4 nds hoverable"
         style={{ backgroundColor: colors?.primary }}
-        onClick={() => setAccentColor(2)}
+        onClick={() => setColor(2)}
       >
         <div className="letter" style={{ backgroundColor: "red" }}></div>
       </div>
@@ -19,7 +27,7 @@ function FloatingButton() {
       <div
         className="nd3 nds hoverable"
         style={{ backgroundColor: colors?.primary }}
-        onClick={() => setAccentColor(1)}
+        onClick={() => setColor(1)}
       >
         <div className="letter" style={{ backgroundColor: "green" }}></div>
       </div>
@@ -27,14 +35,14 @@ function FloatingButton() {
       <div
         className="nd1 nds hoverable"
         style={{ backgroundColor: colors?.primary }}
-        onClick={() => setAccentColor(0)}
+        onClick={() => setColor(0)}
       >
         <div className="letter" style={{ backgroundColor: "blue" }}></div>
       </div>
 
       <div
         className="nd0 nds hoverable"
-        onClick={() => setLight(!light)}
+        onClick={() => changeColorMode()}
         style={{
           backgroundColor: colors?.primary,
           color: colors?.onSecondary,

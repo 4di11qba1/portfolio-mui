@@ -16,7 +16,7 @@ const lightColors = [
     primaryFixed: "#3E6836",
     onPrimaryContainer: "#012101",
     secondary: "#54634D",
-    secondaryFixed: "#BBCBB2",
+    secondaryFixed: "#54634D",
     secondaryContainer: "#D7E8CD",
     onSecondary: "#FFFFFF",
     surfaceContainer: "#ECEFE5",
@@ -27,10 +27,10 @@ const darkColors = [
   {
     // Blue
     primary: "#A0CAFD",
-    primaryFixed: "#36618E",
+    primaryFixed: "#A0CAFD",
     onPrimaryContainer: "#CEE2FC",
     secondary: "#BBC7DB",
-    secondaryFixed: "#535F70",
+    secondaryFixed: "#BBC7DB",
     secondaryContainer: "#3B4858",
     onSecondary: "#253240",
     surfaceContainer: "#1D2024",

@@ -1,13 +1,20 @@
 import { ArrowForward } from "@mui/icons-material";
 import { Divider, Typography } from "@mui/material";
-import React from "react";
-import { Temp } from "../assets/Index";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
-function ServiceCard({ heading, img, link }) {
+// eslint-disable-next-line react/prop-types
+function ServiceCard({ key, heading, img, link }) {
   const nav = useNavigate();
   return (
-    <div className="services-card">
+    <div
+        // key={key}
+        // initial={{opacity: 0, y: -100}}
+        // animate={{opacity: 1, y: 0}}
+        // transition={{duration: 0.85}}
+        // exit={{opacity: 0, y: 100}}
+        className="services-card"
+    >
       <div className="services-card-title">
         <Typography component={"div"} variant="h6">
           {heading}

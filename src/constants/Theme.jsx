@@ -1,13 +1,17 @@
-import React, { useState, createContext, useContext, useEffect } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 import { createTheme, ThemeProvider as MuiThemeProvider } from "@mui/material";
 import { getColors } from "./Colors";
 
 const ThemeContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const MyThemeProvider = ({ children }) => {
-  const [light, setLight] = useState(false);
-  const [accentColor, setAccentColor] = useState(1);
-  const [colors, setColors] = useState(null);
+  const initialLight = localStorage.getItem("light") === "true";
+  const initialAccentColor = parseInt(localStorage.getItem("accentColor"), 10) || 0;
+
+  const [light, setLight] = useState(initialLight);
+  const [accentColor, setAccentColor] = useState(initialAccentColor);
+  const [colors, setColors] = useState(getColors(initialLight, initialAccentColor));
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {

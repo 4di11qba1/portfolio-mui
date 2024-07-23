@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "./Logo";
 import { useTheme } from "../constants/Theme";
 import { useLocation, useNavigate } from "react-router-dom";

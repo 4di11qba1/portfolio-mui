@@ -1,8 +1,8 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { useTheme } from "../constants/Theme";
-import Skill from "../components/Skill";
-import SkillDivider from "../components/SkillDivider";
+import { useTheme } from "../constants/Theme.jsx";
+import Skill from "../components/Skill.jsx";
+import SkillDivider from "../components/SkillDivider.jsx";
 
 function Skills() {
   const { colors, windowWidth } = useTheme();

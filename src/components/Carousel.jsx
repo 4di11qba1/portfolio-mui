@@ -1,41 +1,23 @@
-import React, { useEffect, useState } from "react";
-import ServiceCard from "./ServiceCard";
-import { Temp } from "../assets/Index";
-
-function Carousel({ position, changeElement }) {
-  const elements = [
-    {
-      component: <ServiceCard heading={"UI/UX Design"} img={Temp} />,
-    },
-    {
-      component: <ServiceCard heading={"Web Development"} img={Temp} />,
-    },
-    {
-      component: <ServiceCard heading={"App Development"} img={Temp} />,
-    },
-    {
-      component: <ServiceCard heading={"SEO Services"} img={Temp} />,
-    },
-    {
-      component: <ServiceCard heading={"Digital Marketing"} img={Temp} />,
-    },
-  ];
-
-  return (
-    <div className="carousel-container">
-      <main id="carousel" style={{ "--position": position }}>
-        {elements.map((element, index) => (
-          <div
-            key={index}
-            className="carousel-item"
-            onClick={() => changeElement(index + 1)}
-          >
-            {element.component}
-          </div>
-        ))}
-      </main>
-    </div>
-  );
-}
+import React from "react";
+const Carousel = ({services}) => {
+    return (
+        <div className={'carousel'}>
+            <dl>
+                {services && services.length > 1 && services.map((service, index) => (
+                    <React.Fragment key={index}>
+                        <dt>{service.icon}</dt>
+                        <dd><p>{service.heading}</p><br/>{service.desc}</dd>
+                    </React.Fragment>
+                ))}
+                {services && services.length > 1 && services.map((service, index) => (
+                    <React.Fragment key={index}>
+                        <dt>{service.icon}</dt>
+                        <dd><p>{service.heading}</p><br/>{service.desc}</dd>
+                    </React.Fragment>
+                ))}
+            </dl>
+        </div>
+    );
+};
 
 export default Carousel;

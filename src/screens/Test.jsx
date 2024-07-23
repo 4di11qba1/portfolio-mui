@@ -1,13 +1,11 @@
-import React from "react";
 import Carousel from "../components/Carousel";
-import Stepper from "../components/Stepper";
-
 function Test() {
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ height: "600px", marginBottom: "30px" }}>
       <div className="wrapper-content">
-        <Carousel />
-        <Stepper />
+          <div className={"carousel-test"}>
+              <Carousel />
+          </div>
       </div>
     </div>
   );

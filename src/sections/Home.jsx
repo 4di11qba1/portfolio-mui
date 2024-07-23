@@ -1,13 +1,13 @@
 import { FormatQuote, Star } from "@mui/icons-material";
 import { Chip } from "@mui/material";
-import React from "react";
-import { Avatar } from "../assets/Index";
+import { Avatar } from "../assets/Index.jsx";
 
 function Home() {
   return (
     <div className="home">
       <Chip className="home-chip" label="Hello!" variant="outlined" />
       <p className="home-quote">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
         I'm <span>Adil</span>, <br /> Front End Developer
       </p>
       <div className="home-rating">
@@ -32,7 +32,7 @@ function Home() {
       </div>
       <div className="hero-section">
         <div className="hero-bg"></div>
-        <img className="hero" src={Avatar} />
+        <img className="hero" src={Avatar}  alt={"Avatar"} />
       </div>
     </div>
   );
