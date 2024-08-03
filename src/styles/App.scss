@@ -60,6 +60,13 @@ body {
   background-color: var(--secondary-container);
 }
 
+.button {
+  width: 100%;
+  font-size: 1.5rem !important;
+  border-radius: 50px !important;
+  font-weight: bold !important;
+}
+
 .hoverable {
   transition: all 0.5s;
 }
