@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Alata&display=swap");
 
 $count: 10;
 $multiplier: 4.5s;
 $ease1: cubic-bezier(0.23, 1, 0.32, 1);
 $ease2: cubic-bezier(0.19, 1, 0.22, 1);
-$colors: var(--on-secondary), var(--on-secondary), var(--on-secondary), var(--on-secondary), var(--on-secondary),
-var(--on-secondary), var(--on-secondary), var(--on-secondary), var(--on-secondary), var(--on-secondary);
+$colors: var(--on-secondary), var(--on-secondary), var(--on-secondary),
+  var(--on-secondary), var(--on-secondary), var(--on-secondary),
+  var(--on-secondary), var(--on-secondary), var(--on-secondary),
+  var(--on-secondary);
 
 .carousel {
   position: absolute;
@@ -42,7 +44,7 @@ dt {
   color: var(--primary);
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 1vmin;
     left: 0;
@@ -55,8 +57,13 @@ dt {
 
   @for $i from 0 to $count {
     &:nth-child(#{$i * 2 + 1}) {
-      &, &:after { animation-delay: $i * $count * ($multiplier / 10) }
-      &:after { background-color: nth($colors, $i + 1) }
+      &,
+      &:after {
+        animation-delay: $i * $count * calc($multiplier / 10);
+      }
+      &:after {
+        background-color: nth($colors, $i + 1);
+      }
     }
   }
 }
@@ -82,47 +89,68 @@ dd {
 
   @for $i from 0 through $count {
     &:nth-child(#{$i * 2 + 2}) {
-      animation-delay: $i * $count * ($multiplier / 10);
+      animation-delay: $i * $count * calc($multiplier / 10);
     }
   }
 }
 
 @keyframes dt {
   @for $i from 1 through $count {
-    $anim: $count * ($i / 4);
+    $anim: $count * calc($i / 4);
 
     @if $i == 1 {
-      #{$anim}% { transform: translateY(0); opacity: 1; }
+      #{$anim}% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     } @else if $i == 2 {
-      #{$anim}% { transform: translateY(0); opacity: 1; }
+      #{$anim}% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     } @else if $i == 3 {
-      #{$anim}% { transform: translateY(2%); opacity: 0; }
+      #{$anim}% {
+        transform: translateY(2%);
+        opacity: 0;
+      }
     }
   }
 }
 
 @keyframes dt-pseudo {
   @for $i from 1 through $count {
-    $anim: $count * ($i / 4);
+    $anim: $count * calc($i / 4);
 
     @if $i == 1 {
-      #{$anim}% { transform: scale(1, 0.1); }
+      #{$anim}% {
+        transform: scale(1, 0.1);
+      }
     } @else if $i == 2 {
-      #{$anim}% { transform: scale(1, 0.1); }
+      #{$anim}% {
+        transform: scale(1, 0.1);
+      }
     } @else if $i == 3 {
-      #{$anim}% { transform: scale(0, 0.1); }
+      #{$anim}% {
+        transform: scale(0, 0.1);
+      }
     }
   }
 }
 
 @keyframes dd {
   @for $i from 1 through $count {
-    $anim: $count * ($i / 2);
+    $anim: $count * calc($i / 2);
 
     @if $i == 1 {
-      #{$anim}% { transform: translateY(0); opacity: 1; }
+      #{$anim}% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     } @else if $i == 2 {
-      #{$anim}% { transform: translateY(2%); opacity: 0; }
+      #{$anim}% {
+        transform: translateY(2%);
+        opacity: 0;
+      }
     }
   }
 }
