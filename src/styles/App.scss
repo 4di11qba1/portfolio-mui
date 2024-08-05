@@ -60,11 +60,48 @@ body {
   background-color: var(--secondary-container);
 }
 
+.wrapper-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary);
+  position: relative;
+}
+
+.wrapper-header-text {
+  font-size: 15px;
+  width: 40%;
+  text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper-header-text {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .wrapper-header {
+    flex-direction: column;
+    align-content: space-between;
+    align-items: normal;
+    gap: 10px;
+  }
+  .wrapper-header-text {
+    width: 70%;
+    text-align: left;
+  }
+  .wrapper-header-button {
+    align-self: flex-end;
+  }
+}
+
 .button {
   width: 100%;
-  font-size: 1.5rem !important;
   border-radius: 50px !important;
   font-weight: bold !important;
+  box-shadow: none !important;
 }
 
 .hoverable {

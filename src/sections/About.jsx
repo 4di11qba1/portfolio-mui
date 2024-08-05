@@ -40,6 +40,7 @@ function About() {
                           color: "var(--secondary)",
                           height: "60px",
                           width: "200px",
+                          fontSize: "1.5rem",
                         }}
                       >
                         {" "}

@@ -33,31 +33,35 @@ const services = [
 ];
 
 function Services() {
-  const {colors } = useTheme();
+  const { colors } = useTheme();
 
   return (
-      <div className="wrapper">
-        <div className="wrapper-content">
-          <div className="services">
-            <div className="services-content">
-              <div className="services-header">
-                <Typography component={"div"} variant="h3">
-                  My{" "}
-                  <span style={{ color: colors?.primary, fontWeight: "bold" }}>
+    <div className="wrapper">
+      <div className="wrapper-content">
+        <div className="services">
+          <div className="services-content">
+            <div className="wrapper-header">
+              <Typography component={"div"} variant="h3">
+                My{" "}
+                <span style={{ color: colors?.primary, fontWeight: "bold" }}>
                   Services
                 </span>
-                </Typography>
-                <Typography component="div" variant="body1" className="services-text">
-                  From creating unique UI/UX designs that enhance user experiences
-                  to developing custom solutions, I ensure seamless integration
-                  across platforms.
-                </Typography>
-              </div>
-              <Carousel services={services} />
+              </Typography>
+              <Typography
+                component="div"
+                variant="body1"
+                className="wrapper-header-text"
+              >
+                From creating unique UI/UX designs that enhance user experiences
+                to developing custom solutions, I ensure seamless integration
+                across platforms.
+              </Typography>
             </div>
+            <Carousel services={services} />
           </div>
         </div>
       </div>
+    </div>
   );
 }
 

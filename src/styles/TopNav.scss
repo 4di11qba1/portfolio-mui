@@ -9,7 +9,6 @@
   z-index: 99999;
   padding: 0 30px;
   box-sizing: border-box;
-  border: 5px solid var(--on-secondary);
 }
 
 .top-nav-content {
@@ -22,6 +21,7 @@
   border-radius: 50px;
   font-weight: bold;
   transition: all 0.5s;
+  border: 5px solid var(--on-secondary);
 }
 
 .top-nav-list {

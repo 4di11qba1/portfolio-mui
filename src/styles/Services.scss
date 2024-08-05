@@ -37,21 +37,6 @@
   }
 }
 
-.services-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--secondary);
-  position: relative;
-}
-
-.services-text {
-  font-size: 15px;
-  width: 40%;
-  text-align: right;
-}
-
 .services-card {
   width: 300px;
   height: 350px;
@@ -127,23 +112,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@media screen and (max-width: 800px) {
-  .services-text {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 670px) {
-  .services-header {
-    flex-direction: column;
-    align-content: space-between;
-    align-items: normal;
-    gap: 10px;
-  }
-  .services-text {
-    width: 70%;
-    text-align: left;
-  }
 }
