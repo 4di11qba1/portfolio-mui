@@ -7,11 +7,14 @@ const ThemeContext = createContext();
 // eslint-disable-next-line react/prop-types
 export const MyThemeProvider = ({ children }) => {
   const initialLight = localStorage.getItem("light") === "true";
-  const initialAccentColor = parseInt(localStorage.getItem("accentColor"), 10) || 0;
+  const initialAccentColor =
+    parseInt(localStorage.getItem("accentColor"), 10) || 0;
 
   const [light, setLight] = useState(initialLight);
   const [accentColor, setAccentColor] = useState(initialAccentColor);
-  const [colors, setColors] = useState(getColors(initialLight, initialAccentColor));
+  const [colors, setColors] = useState(
+    getColors(initialLight, initialAccentColor)
+  );
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -36,6 +39,10 @@ export const MyThemeProvider = ({ children }) => {
     document.documentElement.style.setProperty(
       "--on-primary-container",
       colors?.onPrimaryContainer
+    );
+    document.documentElement.style.setProperty(
+      "--primary-container",
+      colors?.primaryContainer
     );
     document.documentElement.style.setProperty(
       "--secondary",

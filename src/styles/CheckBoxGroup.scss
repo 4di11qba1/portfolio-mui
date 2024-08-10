@@ -1,0 +1,29 @@
+.checkbox-group {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 690px) {
+  .checkbox-group {
+    justify-content: start;
+  }
+}

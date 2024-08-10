@@ -1,0 +1,14 @@
+.scroller {
+  max-width: 100% !important;
+  min-height: 5px;
+  border-radius: 50px;
+  background-color: var(--primary);
+  position: relative;
+}
+
+.scroller-bar {
+  height: 100%;
+  position: absolute;
+  border-radius: 50px;
+  background-color: var(--surface-container);
+}

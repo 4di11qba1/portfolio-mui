@@ -2,6 +2,9 @@ import React from "react";
 import { Button, Typography } from "@mui/material";
 import { useTheme } from "../constants/Theme";
 import VPCard from "../components/VPCard";
+import Scroller from "../components/Scroller";
+import CheckBoxGroup from "../components/CheckBoxGroup";
+import { ArrowForward } from "@mui/icons-material";
 
 export default function Portfolio() {
   const { colors } = useTheme();
@@ -10,7 +13,11 @@ export default function Portfolio() {
       <div className="wrapper-content-simple">
         <div className="portfolio">
           <div className="wrapper-header">
-            <Typography component={"div"} variant="h3">
+            <Typography
+              component={"div"}
+              variant="h3"
+              style={{ maxWidth: "500px" }}
+            >
               Let's have a look at my{" "}
               <span style={{ color: colors?.primary, fontWeight: "bold" }}>
                 Portfolio
@@ -31,10 +38,58 @@ export default function Portfolio() {
               See All{" "}
             </Button>
           </div>
-          <div className="projects-list">
+          <div className="horizontal-list" id="projects-list">
             {projects.map((project) => (
               <VPCard key={project.name} {...project} />
             ))}
+          </div>
+          <Scroller
+            elementID={"projects-list"}
+            width={"300px"}
+            height={"7px"}
+            align={"center"}
+          />
+          <CheckBoxGroup
+            list={["E-Commerce", "Learning", "Hobby", "Portfolio"]}
+          />
+          <div className="highlighted-project">
+            <div className="highlighted-project-header">
+              <Typography
+                className="highlighted-project-header-heading"
+                component={"div"}
+                variant="h3"
+                color={"var(--primary)"}
+              >
+                Gamer's Utopia
+              </Typography>
+              <div
+                className="arrow-button button"
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  backgroundColor: "var(--secondary-container)",
+                  color: "var(--secondary)",
+                }}
+              >
+                <ArrowForward
+                  className="arrow"
+                  sx={{
+                    width: "30px",
+                    height: "30px",
+                  }}
+                />
+              </div>
+            </div>
+            <Typography
+              className="highlighted-project-description"
+              component={"div"}
+              variant="p"
+              color={"var(--secondary)"}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              varius ultrices mauris at bibendum. Curabitur hendrerit tellus nec
+              elit egestas, ut pretium.
+            </Typography>
           </div>
         </div>
       </div>

@@ -7,14 +7,7 @@ import { motion } from "framer-motion";
 function ServiceCard({ key, heading, img, link }) {
   const nav = useNavigate();
   return (
-    <div
-        // key={key}
-        // initial={{opacity: 0, y: -100}}
-        // animate={{opacity: 1, y: 0}}
-        // transition={{duration: 0.85}}
-        // exit={{opacity: 0, y: 100}}
-        className="services-card"
-    >
+    <div className="services-card">
       <div className="services-card-title">
         <Typography component={"div"} variant="h6">
           {heading}

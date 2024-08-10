@@ -1,0 +1,37 @@
+.test-card {
+  flex: 0 0 auto;
+  width: 500px;
+  min-height: 200px;
+  background-color: var(--primary);
+  color: var(--on-secondary);
+  border-radius: 20px;
+  padding: 10px 20px 20px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.test-header {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  width: 200px;
+  height: 20px;
+  gap: 5px;
+  align-items: center;
+}
+
+.rating p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.quote {
+  font-size: 60px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
