@@ -5,6 +5,7 @@ import Skills from "../sections/Skills.jsx";
 // import Test from "./Test.jsx";
 import Portfolio from "../sections/Portfolio.jsx";
 import Testimonials from "../sections/Testimonials.jsx";
+import Contact from "../sections/Contact.jsx";
 
 function Main() {
   return (
@@ -15,6 +16,7 @@ function Main() {
       <About />
       <Portfolio />
       <Testimonials />
+      <Contact />
       {/*<Test />*/}
     </div>
   );

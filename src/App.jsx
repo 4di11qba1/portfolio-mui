@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "./constants/Theme";
 import.meta.glob("/src/styles/*.(scss|css)", { eager: true });
 import FloatingButton from "./components/FloatingButton";
@@ -9,6 +9,8 @@ import Main from "./screens/Main.jsx";
 import Test from "./screens/Test.jsx";
 import LandingText from "./components/LandingText.jsx";
 import { AnimatePresence, motion } from "framer-motion";
+import Footer from "./sections/Footer.jsx";
+import Logo from "./components/Logo.jsx";
 
 function App() {
   const { colors } = useTheme();
@@ -35,50 +37,81 @@ function App() {
     };
   }, []);
   return (
-      <AnimatePresence>
-          {showLandingText && (
-              <motion.div
-                  key="landingText"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.5 }}
-              >
-                <LandingText />
-              </motion.div>
-          )}
+    <AnimatePresence>
+      {showLandingText && (
+        <motion.div
+          key="landingText"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5 }}
+        >
+          <LandingText />
+        </motion.div>
+      )}
 
-          {!showLandingText &&
-            <motion.div
-                className={'main'}
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{duration: 1.5, delay: 2}}
-            >
-              <BrowserRouter>
-                <div className="app">
-                  {/* Floating Buttons */}
-                  <FloatingButton />
-                  <MoveToTop />
+      {!showLandingText && (
+        <motion.div
+          className={"main"}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 2 }}
+        >
+          <BrowserRouter>
+            <div className="app">
+              {/* Floating Buttons */}
+              <FloatingButton />
+              <MoveToTop />
 
-                  {/* Content */}
-                  <TopNav />
+              {/* Content */}
+              <TopNav sections={sections} />
 
-                  {/* Home */}
-                  <Routes>
-                    <Route exact path={"/"} element={<Main />} />
-                    {/*<Route exact path="/" element={<Home />} />*/}
-                    {/*<Route exact path="/about" element={<About />} />*/}
-                    {/*<Route exact path="/services" element={<Services />} />*/}
-                    {/*<Route exact path="/skills" element={<Skills />} />*/}
-                    <Route exact path="/test" element={<Test />} />
-                  </Routes>
-                </div>
-              </BrowserRouter>
-            </motion.div>
-          }
-      </AnimatePresence>
+              {/* Home */}
+              <Routes>
+                <Route exact path={"/"} element={<Main />} />
+                {/*<Route exact path="/" element={<Home />} />*/}
+                {/*<Route exact path="/about" element={<About />} />*/}
+                {/*<Route exact path="/services" element={<Services />} />*/}
+                {/*<Route exact path="/skills" element={<Skills />} />*/}
+                <Route exact path="/test" element={<Test />} />
+              </Routes>
+            </div>
+          </BrowserRouter>
+          <Footer sections={sections} />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
 export default App;
+
+const sections = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Services",
+    path: "/services",
+  },
+  {
+    name: "Skills",
+    path: "/skills",
+  },
+  {
+    element: <Logo />,
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Portfolio",
+    path: "/portfolio",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+];

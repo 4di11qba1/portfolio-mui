@@ -1,0 +1,94 @@
+.contact {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  padding: 50px 30px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.mail-input {
+  max-width: 600px;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.mail-text {
+  font-size: 15px;
+  text-align: center;
+  color: var(--primary);
+}
+
+.mail-achievements {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: var(--secondary);
+  transform: translateY(-20px);
+  flex-wrap: wrap;
+}
+
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.highlighted-services-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlighted-service {
+  width: 250px;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--primary);
+  color: var(--secondary-container);
+}
+
+.highlighted-service p {
+  margin: 0;
+}
+
+@media screen and (max-width: 671px) {
+  .mail-text {
+    font-size: 13px;
+  }
+  .highlighted-service {
+    flex-grow: 1;
+  }
+  .mail-achievements {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .mail-text {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mail-text {
+    font-size: 8px;
+  }
+}

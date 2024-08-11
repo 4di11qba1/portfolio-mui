@@ -108,7 +108,7 @@ body {
   box-shadow: none !important;
 }
 
-.arrow-button {
+.icon-button {
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -118,7 +118,7 @@ body {
 .horizontal-list {
   overflow-x: scroll;
   display: flex;
-  gap: calc(100vw - 70px - 101.75%);
+  gap: 5vw;
 }
 
 .hoverable {

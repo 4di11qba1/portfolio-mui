@@ -35,7 +35,7 @@ export default function TestCard({ test }) {
         />
         <p>{test.rating}</p>
       </div>
-      <i class="fa fa-quote-right quote"></i>
+      <i className="fa fa-quote-right quote"></i>
       <Typography component={"div"} variant={"p"} sx={{ marginTop: "15px" }}>
         {test.msg}
       </Typography>

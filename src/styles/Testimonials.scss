@@ -8,6 +8,7 @@
   padding: 10px 20px 20px 20px;
   box-sizing: border-box;
   position: relative;
+  flex-shrink: 0;
 }
 
 .test-header {
@@ -34,4 +35,22 @@
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+@media screen and (max-width: 620px) {
+  .test-card {
+    width: calc(100vw - 120px);
+  }
+}
+
+@media screen and (max-width: 501px) {
+  .test-card {
+    width: calc(100vw - 50px);
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .quote {
+    display: none;
+  }
 }

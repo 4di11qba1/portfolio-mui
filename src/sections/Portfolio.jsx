@@ -63,7 +63,7 @@ export default function Portfolio() {
                 Gamer's Utopia
               </Typography>
               <div
-                className="arrow-button button"
+                className="icon-button button"
                 style={{
                   width: "50px",
                   height: "50px",
@@ -72,7 +72,7 @@ export default function Portfolio() {
                 }}
               >
                 <ArrowForward
-                  className="arrow"
+                  className="icon"
                   sx={{
                     width: "30px",
                     height: "30px",
