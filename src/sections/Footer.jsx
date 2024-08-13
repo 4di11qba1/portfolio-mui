@@ -5,12 +5,13 @@ import Logo from "../components/Logo";
 import Input from "../components/Input";
 import { Send } from "@mui/icons-material";
 
-export default function Footer({ sections }) {
+export default function Footer({ sections, id }) {
   const { colors } = useTheme();
   return (
     <div
-      className="wrapper-content"
+      className="wrapper-content observer"
       style={{ borderBottomLeftRadius: "0", borderBottomRightRadius: "0" }}
+      id={id}
     >
       <div className="footer">
         <div
@@ -51,7 +52,7 @@ export default function Footer({ sections }) {
             <Typography
               component={"div"}
               variant="p"
-              sx={{ fontWeight: "normal" }}
+              sx={{ fontWeight: "normal", color: colors?.secondary }}
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
               esse nam, dolore tenetur pariatur repudiandae consequatur
@@ -75,14 +76,14 @@ export default function Footer({ sections }) {
               {sections.map(
                 (section) =>
                   section.name && (
-                    <>
+                    <React.Fragment key={section.name}>
                       <a
                         style={{ fontWeight: "normal", cursor: "pointer" }}
                         href={section.path}
                       >
                         {section.name}
                       </a>
-                    </>
+                    </React.Fragment>
                   )
               )}
             </div>

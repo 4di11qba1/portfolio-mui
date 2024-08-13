@@ -4,11 +4,11 @@ import { useTheme } from "../constants/Theme";
 import TestCard from "../components/TestCard";
 import Scroller from "../components/Scroller";
 
-export default function Testimonials() {
+export default function Testimonials({ id }) {
   const { colors } = useTheme();
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" id={id}>
       <div className="wrapper-content">
         <div className="services">
           <div className="services-content">
@@ -37,10 +37,9 @@ export default function Testimonials() {
                 className="testimonials-description"
                 style={{ maxWidth: "500px" }}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit quo sapiente veritatis mollitia, odit perferendis
-                veniam id recusandae ut cum nisi adipisci sint? Architecto,
-                quibusdam tenetur veritatis sed eum earum?
+                Don’t just take our word for it—hear from those who’ve
+                experienced our innovation firsthand. Discover why businesses
+                choose us to bring their visions to life.
               </Typography>
             </div>
             <div className="horizontal-list" id="test-list">

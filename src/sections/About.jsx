@@ -3,10 +3,10 @@ import { Avatar } from "../assets/Index";
 import { Button } from "@mui/material";
 import Stats from "../components/Stats";
 
-function About() {
+function About({ id }) {
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper observer" id={id}>
         <div className="wrapper-content">
           <div className="ltrans-outer">
             <div className="ltrans-container">
@@ -19,11 +19,15 @@ function About() {
                   </div>
                   <div className="ltrans-par">
                     <p className="ltrans-p">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Fuga necessitatibus delectus error dolorum voluptatem
-                      aliquid quis ducimus enim accusamus ad voluptatum,
-                      eligendi quae dignissimos ullam a excepturi rem iure
-                      ipsam.
+                      Why choose us? Our team combines deep expertise in React,
+                      React Native, Python, Django, Flask, and the MERN stack
+                      with cutting-edge skills in HTML, CSS, and JavaScript. We
+                      blend innovation with technical prowess to deliver
+                      seamless, high-performance applications. From crafting
+                      engaging web experiences to harnessing the power of
+                      machine learning and AI, we turn complex challenges into
+                      elegant solutions. Partner with us to transform your
+                      vision into impactful, future-ready technology.
                     </p>
                     <div className="about-stats">
                       <Stats count={"10"} desc={"Projects Completed"} />

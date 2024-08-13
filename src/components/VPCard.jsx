@@ -13,17 +13,14 @@ function VPCard({ name, image }) {
       }}
     >
       <div className="vp-card-content">
-        <ListItemText primary={name} secondary={name} />
-      </div>
-      {/* <div
-        className="vp-card-genre"
-        style={{ backgroundColor: theme.palette.background.paper }}
-      >
-        {item?.rating}{" "}
-        <Star
-          sx={{ width: "12px", height: "12px", transform: "translateY(1.5px)" }}
+        <ListItemText
+          primary={name}
+          secondary={name}
+          sx={{
+            "& .MuiTypography-root": { color: "var(--secondary)" },
+          }}
         />
-      </div> */}
+      </div>
     </div>
   );
 }

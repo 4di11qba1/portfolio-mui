@@ -3,7 +3,7 @@ import { IconButton } from "@mui/material";
 import { ArrowUpward } from "@mui/icons-material";
 import { useTheme } from "../constants/Theme";
 
-function MoveToTop() {
+function MoveToTop({ moveToTop }) {
   const { colors } = useTheme();
   return (
     <IconButton
@@ -12,6 +12,7 @@ function MoveToTop() {
         backgroundColor: colors?.primary,
         color: colors?.onSecondary,
       }}
+      onClick={() => moveToTop()}
     >
       <ArrowUpward />
     </IconButton>

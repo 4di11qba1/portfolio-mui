@@ -13,10 +13,10 @@ import {
   MobileFriendlyOutlined,
 } from "@mui/icons-material";
 
-export default function Contact() {
+export default function Contact({ id }) {
   const { colors } = useTheme();
   return (
-    <div className="wrapper">
+    <div className="wrapper observer" id={id}>
       <div className="wrapper-content-simple">
         <div className="contact">
           <div

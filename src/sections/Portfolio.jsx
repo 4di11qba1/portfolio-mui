@@ -6,10 +6,10 @@ import Scroller from "../components/Scroller";
 import CheckBoxGroup from "../components/CheckBoxGroup";
 import { ArrowForward } from "@mui/icons-material";
 
-export default function Portfolio() {
+export default function Portfolio({ id }) {
   const { colors } = useTheme();
   return (
-    <div className="wrapper">
+    <div className="wrapper" id={id}>
       <div className="wrapper-content-simple">
         <div className="portfolio">
           <div className="wrapper-header">
@@ -86,9 +86,9 @@ export default function Portfolio() {
               variant="p"
               color={"var(--secondary)"}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              varius ultrices mauris at bibendum. Curabitur hendrerit tellus nec
-              elit egestas, ut pretium.
+              Gamer's Utopia: The ultimate social app for gamers. Compare
+              different game prices, get personalized game recommendations via
+              machine learning, and enjoy real-time chat—all in one place.
             </Typography>
           </div>
         </div>

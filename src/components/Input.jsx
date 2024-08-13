@@ -34,9 +34,11 @@ export default function Input({
           }}
         />
       </div>
-      <p className="mail-text" style={{ fontSize: fontSize }}>
-        {text}
-      </p>
+      <input
+        className="mail-placeholder"
+        placeholder={text}
+        style={{ fontSize: fontSize }}
+      />
       {icon ? (
         <div
           className="icon-button"

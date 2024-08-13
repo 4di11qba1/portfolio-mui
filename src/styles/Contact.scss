@@ -21,10 +21,25 @@
   position: relative;
 }
 
-.mail-text {
+.mail-placeholder {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
   font-size: 15px;
   text-align: center;
   color: var(--primary);
+}
+
+.mail-placeholder::placeholder {
+  color: var(--primary);
+}
+
+.mail-placeholder:focus {
+  outline: none;
+}
+
+.mail-placeholder:focus::placeholder {
+  color: transparent;
 }
 
 .mail-achievements {
