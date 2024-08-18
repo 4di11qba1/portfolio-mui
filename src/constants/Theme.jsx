@@ -10,6 +10,9 @@ export const MyThemeProvider = ({ children }) => {
   const initialAccentColor =
     parseInt(localStorage.getItem("accentColor"), 10) || 0;
 
+  // Animations Delay
+  const delay = 0.5;
+
   const [light, setLight] = useState(initialLight);
   const [accentColor, setAccentColor] = useState(initialAccentColor);
   const [colors, setColors] = useState(
@@ -81,6 +84,7 @@ export const MyThemeProvider = ({ children }) => {
         setAccentColor,
         colors,
         windowWidth,
+        delay,
       }}
     >
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>

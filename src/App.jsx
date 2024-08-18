@@ -205,7 +205,7 @@ function App() {
             </div>
           </div>
           <Footer sections={sections} />
-          <Test />
+          {/* <Test /> */}
         </motion.div>
       )}
     </AnimatePresence>

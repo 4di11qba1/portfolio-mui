@@ -42,7 +42,7 @@ function Services({ id }) {
           <div className="services-content">
             <div className="wrapper-header">
               <Typography component={"div"} variant="h3">
-                My{" "}
+                Our{" "}
                 <span style={{ color: colors?.primary, fontWeight: "bold" }}>
                   Services
                 </span>

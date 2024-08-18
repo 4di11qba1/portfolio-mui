@@ -18,7 +18,7 @@ export default function Portfolio({ id }) {
               variant="h3"
               style={{ maxWidth: "500px" }}
             >
-              Let's have a look at my{" "}
+              Let's have a look at our{" "}
               <span style={{ color: colors?.primary, fontWeight: "bold" }}>
                 Portfolio
               </span>

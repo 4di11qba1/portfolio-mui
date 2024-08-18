@@ -1,26 +1,60 @@
 import { FormatQuote, Star } from "@mui/icons-material";
 import { Chip } from "@mui/material";
 import { Avatar } from "../assets/Index.jsx";
+import { motion } from "framer-motion";
+import { useTheme } from "../constants/Theme.jsx";
 
 function Home({ id }) {
+  const { delay } = useTheme();
   return (
     <div className="home observer" id={id}>
-      <Chip className="home-chip" label="Hello!" variant="outlined" />
-      <p className="home-quote">
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -100 }}
+        transition={{
+          duration: 0.5,
+          delay: delay,
+        }}
+      >
+        <Chip className="home-chip" label="Hello!" variant="outlined" />
+      </motion.div>
+      <motion.p
+        className="home-quote"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: delay }}
+        exit={{ opacity: 0, scale: 0.5 }}
+      >
         {/* eslint-disable-next-line react/no-unescaped-entities */}
-        We're <span>NextEd Labs</span>, <br /> your top choice for innovative
+        We're <span>NexEnt Labs</span>, <br /> your top choice for innovative
         software solutions!
-      </p>
+      </motion.p>
       <div className="home-rating">
-        <div className="home-rating-quote1">
+        <motion.div
+          className="home-rating-quote1"
+          initial={{ opacity: 0, x: -500 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -500 }}
+          transition={{ duration: 0.5, delay: delay }}
+        >
           <FormatQuote className="home-icon" />
           <p>
-            NextEd team's exceptional skills ensure our website’s success.
+            NexEnt team's exceptional skills ensure our website’s success.
             <br />
             Highly Recommended.
           </p>
-        </div>
-        <div className="home-rating-quote2">
+        </motion.div>
+        <motion.div
+          className="home-rating-quote2"
+          initial={{ opacity: 0, x: 500 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 500 }}
+          transition={{
+            duration: 0.5,
+            delay: delay,
+          }}
+        >
           <div style={{ display: "flex", gap: "1px" }}>
             <Star className="home-icon" />
             <Star className="home-icon" />
@@ -29,11 +63,28 @@ function Home({ id }) {
             <Star className="home-icon" />
           </div>
           <p>All projects done with full client satisfaction.</p>
-        </div>
+        </motion.div>
       </div>
       <div className="hero-section">
-        <div className="hero-bg"></div>
-        <img className="hero" src={Avatar} alt={"Avatar"} />
+        <motion.div
+          className="hero-bg"
+          initial={{ opacity: 0, y: 100, scale: 0.5 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 100, scale: 0.5 }}
+          transition={{
+            duration: 0.5,
+            delay: delay,
+          }}
+        ></motion.div>
+        <motion.img
+          className="hero"
+          initial={{ y: 500 }}
+          animate={{ y: 0 }}
+          exit={{ y: 500 }}
+          transition={{ duration: 0.5, delay: delay }}
+          src={Avatar}
+          alt={"Avatar"}
+        />
       </div>
     </div>
   );

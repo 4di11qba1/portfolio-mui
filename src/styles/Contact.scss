@@ -84,7 +84,7 @@
 }
 
 @media screen and (max-width: 671px) {
-  .mail-text {
+  .mail-placeholder {
     font-size: 13px;
   }
   .highlighted-service {
@@ -97,13 +97,13 @@
 }
 
 @media screen and (max-width: 540px) {
-  .mail-text {
+  .mail-placeholder {
     font-size: 10px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .mail-text {
+  .mail-placeholder {
     font-size: 8px;
   }
 }

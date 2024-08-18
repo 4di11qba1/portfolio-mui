@@ -6,11 +6,15 @@ import Input from "../components/Input";
 import { Send } from "@mui/icons-material";
 
 export default function Footer({ sections, id }) {
-  const { colors } = useTheme();
+  const { colors, windowWidth } = useTheme();
   return (
     <div
       className="wrapper-content observer"
-      style={{ borderBottomLeftRadius: "0", borderBottomRightRadius: "0" }}
+      style={{
+        borderBottomLeftRadius: "0",
+        borderBottomRightRadius: "0",
+        marginLeft: windowWidth > 1920 ? "calc((100vw - 1920px) / 2)" : "",
+      }}
       id={id}
     >
       <div className="footer">

@@ -16,7 +16,7 @@ function Skills({ id }) {
               variant="h3"
               sx={{ color: colors?.secondary }}
             >
-              My{" "}
+              Team{" "}
               <span style={{ color: "var(--primary)", fontWeight: "bold" }}>
                 Skills
               </span>
@@ -59,7 +59,7 @@ const skills = [
   {
     title: "C++",
     icon: <i className="devicon devicon-cplusplus-plain"></i>,
-    desc: "Unleash the power of top-notch software solutions with our team's exceptional skills in React and C++. We blend dynamic, user-centric web experiences with robust, high-performance applications to bring your most ambitious projects to life. Elevate your technology with our expertise and innovation!",
+    desc: "Unleash the power of top-notch software solutions with our team's exceptional skills in C++. We blend dynamic, user-centric web experiences with robust, high-performance applications to bring your most ambitious projects to life. Elevate your technology with our expertise and innovation!",
   },
   {
     title: "C# .NET",

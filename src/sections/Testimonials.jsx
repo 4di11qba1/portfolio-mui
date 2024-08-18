@@ -28,7 +28,7 @@ export default function Testimonials({ id }) {
               >
                 Testimonials That Speak to{" "}
                 <span style={{ color: colors?.primary, fontWeight: "bold" }}>
-                  My Results
+                  Our Results
                 </span>
               </Typography>
               <Typography
