@@ -4,9 +4,10 @@ import { useTheme } from "../constants/Theme";
 import Logo from "../components/Logo";
 import Input from "../components/Input";
 import { Send } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 export default function Footer({ sections, id }) {
-  const { colors, windowWidth } = useTheme();
+  const { colors, windowWidth, delay, transition } = useTheme();
   return (
     <div
       className="wrapper-content observer"
@@ -25,25 +26,39 @@ export default function Footer({ sections, id }) {
             gap: "20px",
           }}
         >
-          <Typography component={"div"} variant="h3">
-            <span style={{ color: colors?.primary, fontWeight: "bold" }}>
-              Let's Connect
-            </span>
-          </Typography>
-          <Button
-            variant="contained"
-            className="button wrapper-header-button"
-            style={{
-              backgroundColor: "var(--on-secondary)",
-              color: "var(--secondary)",
-              height: "50px",
-              width: "150px",
-              fontSize: "1rem",
-            }}
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ delay: delay, ...transition }}
           >
-            {" "}
-            Hire Me{" "}
-          </Button>
+            <Typography component={"div"} variant="h3">
+              <span style={{ color: colors?.primary, fontWeight: "bold" }}>
+                Let's Connect
+              </span>
+            </Typography>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ delay: delay, ...transition }}
+          >
+            <Button
+              variant="contained"
+              className="button wrapper-header-button"
+              style={{
+                backgroundColor: "var(--on-secondary)",
+                color: "var(--secondary)",
+                height: "50px",
+                width: "150px",
+                fontSize: "1rem",
+              }}
+            >
+              {" "}
+              Hire Me{" "}
+            </Button>
+          </motion.div>
         </div>
         <Divider
           flexItem
@@ -52,23 +67,43 @@ export default function Footer({ sections, id }) {
         />
         <div className="footer-content">
           <div className="footer-main footer-column">
-            <Logo />
-            <Typography
-              component={"div"}
-              variant="p"
-              sx={{ fontWeight: "normal", color: colors?.secondary }}
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ delay: delay + 0.3, ...transition }}
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-              esse nam, dolore tenetur pariatur repudiandae consequatur
-              molestiae, impedit quam consectetur at provident? Dolor,
-              architecto! Nam tempora ipsum vitae est veritatis. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Culpa esse nam,
-              dolore tenetur pariatur repudiandae consequatur molestiae, impedit
-              quam consectetur at provident? Dolor, architecto! Nam tempora
-              ipsum vitae est veritatis.
-            </Typography>
+              <Logo />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ delay: delay + 0.5, ...transition }}
+            >
+              <Typography
+                component={"div"}
+                variant="p"
+                sx={{ fontWeight: "normal", color: colors?.secondary }}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                esse nam, dolore tenetur pariatur repudiandae consequatur
+                molestiae, impedit quam consectetur at provident? Dolor,
+                architecto! Nam tempora ipsum vitae est veritatis. Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Culpa esse nam,
+                dolore tenetur pariatur repudiandae consequatur molestiae,
+                impedit quam consectetur at provident? Dolor, architecto! Nam
+                tempora ipsum vitae est veritatis.
+              </Typography>
+            </motion.div>
           </div>
-          <div className="footer-secondary">
+          <motion.div
+            className="footer-secondary"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            transition={{ delay: delay + 0.3, ...transition }}
+          >
             <div className="footer-nav footer-column">
               <Typography
                 component={"div"}
@@ -78,36 +113,76 @@ export default function Footer({ sections, id }) {
                 Navigation
               </Typography>
               {sections.map(
-                (section) =>
+                (section, index) =>
                   section.name && (
-                    <React.Fragment key={section.name}>
-                      <a
-                        style={{ fontWeight: "normal", cursor: "pointer" }}
-                        href={section.path}
-                      >
-                        {section.name}
-                      </a>
-                    </React.Fragment>
+                    <motion.a
+                      key={index}
+                      style={{ fontWeight: "normal", cursor: "pointer" }}
+                      href={section.path}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0 }}
+                      transition={{
+                        delay: delay + 0.3 + index * 0.2,
+                        ...transition,
+                      }}
+                    >
+                      {section.name}
+                    </motion.a>
                   )
               )}
             </div>
-            <div className="footer-contact footer-column">
-              <Typography
-                component={"div"}
-                variant="h6"
-                sx={{ color: colors?.primary }}
+            <motion.div
+              className="footer-contact footer-column"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 100 }}
+              transition={{ delay: delay + 0.3, ...transition }}
+            >
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ delay: delay + 0.5, ...transition }}
               >
-                Contact
-              </Typography>
-              <Typography component={"div"} variant="p">
-                +92 316 0046262
-              </Typography>
-              <Typography component={"div"} variant="p">
-                adil.iqbal756@gmail.com
-              </Typography>
-              <Typography component={"div"} variant="">
-                Lahore, 54000
-              </Typography>
+                <Typography
+                  component={"div"}
+                  variant="h6"
+                  sx={{ color: colors?.primary }}
+                >
+                  Contact
+                </Typography>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ delay: delay + 0.7, ...transition }}
+              >
+                <Typography component={"div"} variant="p">
+                  +92 316 0046262
+                </Typography>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ delay: delay + 0.9, ...transition }}
+              >
+                <Typography component={"div"} variant="p">
+                  adil.iqbal756@gmail.com
+                </Typography>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ delay: delay + 1.1, ...transition }}
+              >
+                <Typography component={"div"} variant="">
+                  Lahore, 54000
+                </Typography>
+              </motion.div>
               <Input
                 color={colors?.secondary}
                 bgColor={colors?.onSecondary}
@@ -115,9 +190,10 @@ export default function Footer({ sections, id }) {
                 text={"Get Latest Information."}
                 icon={<Send />}
                 fontSize={"10px"}
+                delay={delay + 1.3}
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

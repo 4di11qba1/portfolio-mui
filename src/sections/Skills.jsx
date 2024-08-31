@@ -3,14 +3,20 @@ import { Typography } from "@mui/material";
 import { useTheme } from "../constants/Theme.jsx";
 import Skill from "../components/Skill.jsx";
 import SkillDivider from "../components/SkillDivider.jsx";
+import { delay, motion } from "framer-motion";
 
 function Skills({ id }) {
-  const { colors, windowWidth } = useTheme();
+  const { colors, windowWidth, transition } = useTheme();
   return (
     <div className="wrapper observer" id={id}>
       <div className="wrapper-content-simple">
         <div className="skills">
-          <div className="skills-header">
+          <motion.div
+            className="skills-header"
+            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -100 }}
+            transition={transition}
+          >
             <Typography
               component={"div"}
               variant="h3"
@@ -21,24 +27,40 @@ function Skills({ id }) {
                 Skills
               </span>
             </Typography>
-          </div>
+          </motion.div>
           <div className="skills-content">
             <div className="skills-column">
-              {skills.slice(0, 3).map((skill) => (
-                <Skill key={skill.title} {...skill} />
+              {skills.slice(0, 3).map((skill, index) => (
+                <motion.div
+                  key={skill.title}
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ ...transition, delay: index * 0.2 }}
+                >
+                  <Skill {...skill} />
+                </motion.div>
               ))}
             </div>
             <div className="skill-inner-divider">
               <SkillDivider />
             </div>
             <div className="skills-column">
-              {skills.slice(3, 6).map((skill) => (
-                <Skill
+              {skills.slice(3, 6).map((skill, index) => (
+                <motion.div
                   key={skill.title}
-                  {...skill}
-                  align={windowWidth > 560 ? "right" : ""}
-                  flexDirection={windowWidth > 560 ? "row-reverse" : ""}
-                />
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 100 }}
+                  transition={{ ...transition, delay: index * 0.2 }}
+                >
+                  <Skill
+                    key={skill.title}
+                    {...skill}
+                    align={windowWidth > 560 ? "right" : ""}
+                    flexDirection={windowWidth > 560 ? "row-reverse" : ""}
+                  />
+                </motion.div>
               ))}
             </div>
           </div>

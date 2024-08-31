@@ -1,6 +1,8 @@
 import React from "react";
 import { MailOutlined } from "@mui/icons-material";
 import { Button } from "@mui/material";
+import { motion } from "framer-motion";
+import { useTheme } from "../constants/Theme";
 
 export default function Input({
   width,
@@ -11,11 +13,17 @@ export default function Input({
   buttonText,
   text,
   fontSize,
+  delay,
 }) {
+  const { transition } = useTheme();
   return (
-    <div
+    <motion.div
       className="wrapper-content mail-input"
       style={{ width: width, backgroundColor: bgColor }}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0 }}
+      transition={{ ...transition, delay }}
     >
       <div
         className="icon-button"
@@ -69,6 +77,6 @@ export default function Input({
           </Button>
         )
       )}
-    </div>
+    </motion.div>
   );
 }

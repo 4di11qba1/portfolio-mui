@@ -12,9 +12,10 @@ import {
   LanguageOutlined,
   MobileFriendlyOutlined,
 } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 export default function Contact({ id }) {
-  const { colors } = useTheme();
+  const { colors, delay, transition } = useTheme();
   return (
     <div className="wrapper observer" id={id}>
       <div className="wrapper-content-simple">
@@ -28,16 +29,23 @@ export default function Contact({ id }) {
               textAlign: "center",
             }}
           >
-            <Typography
-              component={"div"}
-              variant="h3"
-              style={{ maxWidth: "600px" }}
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 100 }}
+              transition={transition}
             >
-              Have an Awesome Project Idea?{" "}
-              <span style={{ color: colors?.primary, fontWeight: "bold" }}>
-                Let's Discuss
-              </span>
-            </Typography>
+              <Typography
+                component={"div"}
+                variant="h3"
+                style={{ maxWidth: "600px" }}
+              >
+                Have an Awesome Project Idea?{" "}
+                <span style={{ color: colors?.primary, fontWeight: "bold" }}>
+                  Let's Discuss
+                </span>
+              </Typography>
+            </motion.div>
           </div>
           <Input
             color={colors?.secondary}
@@ -47,16 +55,32 @@ export default function Contact({ id }) {
           />
           <div className="mail-achievements">
             {achievements.map((achievement, index) => (
-              <Achievement
+              <motion.div
                 key={index}
-                icon={achievement.icon}
-                desc={achievement.desc}
-              />
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ ...transition, delay: (index + 1) * 0.2 }}
+              >
+                <Achievement
+                  key={index}
+                  icon={achievement.icon}
+                  desc={achievement.desc}
+                />
+              </motion.div>
             ))}
           </div>
           <div className="highlighted-services-section">
             {highlightedServices.map((service, index) => (
-              <HighlightedService key={index} service={service} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ ...transition, delay: (index + 1) * 0.2 }}
+              >
+                <HighlightedService key={index} service={service} />
+              </motion.div>
             ))}
           </div>
         </div>

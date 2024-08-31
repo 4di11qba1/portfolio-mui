@@ -6,10 +6,10 @@ import MoveToTop from "./components/MoveToTop";
 import TopNav from "./components/TopNav";
 import LandingText from "./components/LandingText.jsx";
 import { AnimatePresence, motion } from "framer-motion";
-import Footer from "./sections/Footer.jsx";
 import Logo from "./components/Logo.jsx";
 import LazyLoad from "./LazyLoader.jsx";
 import Test from "./Test.jsx";
+import ThemeButton from "./components/ThemeButton.jsx";
 
 const Home = lazy(() => import("./sections/Home.jsx"));
 const About = lazy(() => import("./sections/About.jsx"));
@@ -18,6 +18,7 @@ const Skills = lazy(() => import("./sections/Skills.jsx"));
 const Portfolio = lazy(() => import("./sections/Portfolio.jsx"));
 const Testimonials = lazy(() => import("./sections/Testimonials.jsx"));
 const Contact = lazy(() => import("./sections/Contact.jsx"));
+const Footer = lazy(() => import("./sections/Footer.jsx"));
 
 function App() {
   // Srollers
@@ -131,7 +132,7 @@ function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1.5, ease: "linear" }}
         >
           <LandingText />
         </motion.div>
@@ -142,11 +143,12 @@ function App() {
           className={"main"}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, delay: 2 }}
+          transition={{ duration: 1.5, delay: 2, ease: "linear" }}
         >
           <div className="app">
             {/* Floating Buttons */}
-            <FloatingButton />
+            {/* <FloatingButton /> */}
+            <ThemeButton />
             <MoveToTop moveToTop={moveToTop} />
 
             {/* Content */}
@@ -204,7 +206,11 @@ function App() {
               </LazyLoad>
             </div>
           </div>
-          <Footer sections={sections} />
+          <LazyLoad>
+            <div ref={contactRef}>
+              <Footer sections={sections} />
+            </div>
+          </LazyLoad>
           {/* <Test /> */}
         </motion.div>
       )}

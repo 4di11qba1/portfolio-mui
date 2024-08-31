@@ -4,14 +4,14 @@ import { Edit, DarkMode, LightMode } from "@mui/icons-material";
 import { useTheme } from "../constants/Theme";
 
 function FloatingButton() {
-  const { light, setLight, accentColor, setAccentColor, colors } = useTheme();
+  const { light, setLight, setAccentColor, colors } = useTheme();
   const setColor = (color) => {
-      localStorage.setItem("accentColor", color);
-      setAccentColor(color);
-  }
+    localStorage.setItem("accentColor", color);
+    setAccentColor(color);
+  };
   const changeColorMode = () => {
-      localStorage.setItem("light", !light);
-        setLight(!light);
+    localStorage.setItem("light", !light);
+    setLight(!light);
   };
   return (
     // <IconButton>

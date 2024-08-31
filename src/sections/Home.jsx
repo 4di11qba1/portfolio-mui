@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 import { useTheme } from "../constants/Theme.jsx";
 
 function Home({ id }) {
-  const { delay } = useTheme();
+  const { delay, transition } = useTheme();
   return (
     <div className="home observer" id={id}>
       <motion.div
         initial={{ opacity: 0, y: -100 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -100 }}
-        transition={{
-          duration: 0.5,
-          delay: delay,
+        animate={{
+          opacity: 1,
+          y: 0,
         }}
+        exit={{ opacity: 0, y: -100 }}
+        transition={transition}
       >
         <Chip className="home-chip" label="Hello!" variant="outlined" />
       </motion.div>
@@ -23,7 +23,7 @@ function Home({ id }) {
         className="home-quote"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: delay }}
+        transition={transition}
         exit={{ opacity: 0, scale: 0.5 }}
       >
         {/* eslint-disable-next-line react/no-unescaped-entities */}
@@ -36,7 +36,7 @@ function Home({ id }) {
           initial={{ opacity: 0, x: -500 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -500 }}
-          transition={{ duration: 0.5, delay: delay }}
+          transition={transition}
         >
           <FormatQuote className="home-icon" />
           <p>
@@ -50,10 +50,7 @@ function Home({ id }) {
           initial={{ opacity: 0, x: 500 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 500 }}
-          transition={{
-            duration: 0.5,
-            delay: delay,
-          }}
+          transition={transition}
         >
           <div style={{ display: "flex", gap: "1px" }}>
             <Star className="home-icon" />
@@ -71,17 +68,14 @@ function Home({ id }) {
           initial={{ opacity: 0, y: 100, scale: 0.5 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 100, scale: 0.5 }}
-          transition={{
-            duration: 0.5,
-            delay: delay,
-          }}
+          transition={transition}
         ></motion.div>
         <motion.img
           className="hero"
           initial={{ y: 500 }}
           animate={{ y: 0 }}
           exit={{ y: 500 }}
-          transition={{ duration: 0.5, delay: delay }}
+          transition={transition}
           src={Avatar}
           alt={"Avatar"}
         />

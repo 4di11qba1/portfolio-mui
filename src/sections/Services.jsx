@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Typography } from "@mui/material";
 import { useTheme } from "../constants/Theme.jsx";
 import Stepper from "../components/Stepper.jsx";
 import Carousel from "../components/Carousel.jsx";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -33,20 +34,30 @@ const services = [
 ];
 
 function Services({ id }) {
-  const { colors } = useTheme();
+  const { colors, delay } = useTheme();
 
   return (
     <div className="wrapper observer" id={id}>
-      <div className="wrapper-content">
+      <motion.div
+        className="wrapper-content"
+        transition={{ duration: 0.5, delay: delay, ease: "linear" }}
+      >
         <div className="services">
           <div className="services-content">
             <div className="wrapper-header">
-              <Typography component={"div"} variant="h3">
-                Our{" "}
-                <span style={{ color: colors?.primary, fontWeight: "bold" }}>
-                  Services
-                </span>
-              </Typography>
+              <motion.div
+                initial={{ x: -200 }}
+                animate={{ x: 0 }}
+                exit={{ x: -200 }}
+                transition={{ duration: 0.5, delay: delay, ease: "linear" }}
+              >
+                <Typography component={"div"} variant="h3">
+                  Our{" "}
+                  <span style={{ color: colors?.primary, fontWeight: "bold" }}>
+                    Services
+                  </span>
+                </Typography>
+              </motion.div>
               <Typography
                 component="div"
                 variant="body1"
@@ -60,7 +71,7 @@ function Services({ id }) {
             <Carousel services={services} />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

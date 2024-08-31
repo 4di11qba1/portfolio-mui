@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "../constants/Theme";
+import { motion } from "framer-motion";
 
 function TopNav({ sections, scrollToSection }) {
-  const { colors } = useTheme();
+  const { colors, transition } = useTheme();
   const [activeSection, setActiveSection] = useState("home");
   const [scrollY, setScrollY] = useState(0);
+  const [showNavItems, setShowNavItems] = useState(false); // State to control the appearance of nav items
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,20 +50,49 @@ function TopNav({ sections, scrollToSection }) {
   }, [scrollY]);
 
   return (
-    <div className="top-nav">
-      <div
+    <motion.div
+      className="top-nav"
+      initial={{ y: -1000 }}
+      animate={{ y: 0 }}
+      exit={{ y: -1000 }}
+      transition={transition}
+    >
+      <motion.div
         className="top-nav-content"
         style={{
           backgroundColor: colors?.secondaryContainer,
           color: colors?.secondary,
         }}
+        initial={{ width: "0%" }}
+        animate={{ width: "100%" }}
+        exit={{ width: "0%" }}
+        transition={transition}
+        onAnimationComplete={() => setShowNavItems(true)} // Set state to true when animation completes
       >
         <ul className="top-nav-list">
           {sections.map((element, index) => {
             return element.element ? (
-              <li key={index}>{element.element}</li>
+              <motion.li
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: showNavItems ? 1 : 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: showNavItems ? 0.2 * index : 0, // Stagger each item with delay
+                }}
+              >
+                {element.element}
+              </motion.li>
             ) : (
-              <li key={index}>
+              <motion.li
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: showNavItems ? 1 : 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: showNavItems ? 0.2 * index : 0, // Stagger each item with delay
+                }}
+              >
                 <div
                   className={`top-nav-list-item ${
                     element.id === activeSection ? "active" : ""
@@ -74,12 +105,12 @@ function TopNav({ sections, scrollToSection }) {
                 >
                   {element.name}
                 </div>
-              </li>
+              </motion.li>
             );
           })}
         </ul>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

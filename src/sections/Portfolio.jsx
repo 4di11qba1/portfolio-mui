@@ -5,42 +5,68 @@ import VPCard from "../components/VPCard";
 import Scroller from "../components/Scroller";
 import CheckBoxGroup from "../components/CheckBoxGroup";
 import { ArrowForward } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 export default function Portfolio({ id }) {
-  const { colors } = useTheme();
+  const { colors, transition, delay } = useTheme();
   return (
     <div className="wrapper" id={id}>
       <div className="wrapper-content-simple">
         <div className="portfolio">
           <div className="wrapper-header">
-            <Typography
-              component={"div"}
-              variant="h3"
-              style={{ maxWidth: "500px" }}
+            <motion.div
+              initial={{ opacity: 0, x: -200 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -200 }}
+              transition={transition}
             >
-              Let's have a look at our{" "}
-              <span style={{ color: colors?.primary, fontWeight: "bold" }}>
-                Portfolio
-              </span>
-            </Typography>
-            <Button
-              variant="contained"
-              className="button wrapper-header-button"
-              style={{
-                backgroundColor: "var(--secondary-container)",
-                color: "var(--secondary)",
-                height: "50px",
-                width: "150px",
-                fontSize: "1rem",
-              }}
+              <Typography
+                component={"div"}
+                variant="h3"
+                style={{ maxWidth: "500px" }}
+              >
+                Let's have a look at our{" "}
+                <span style={{ color: colors?.primary, fontWeight: "bold" }}>
+                  Portfolio
+                </span>
+              </Typography>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 200 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 200 }}
+              transition={transition}
             >
-              {" "}
-              See All{" "}
-            </Button>
+              <Button
+                variant="contained"
+                className="button wrapper-header-button"
+                style={{
+                  backgroundColor: "var(--secondary-container)",
+                  color: "var(--secondary)",
+                  height: "50px",
+                  width: "150px",
+                  fontSize: "1rem",
+                }}
+              >
+                {" "}
+                See All{" "}
+              </Button>
+            </motion.div>
           </div>
           <div className="horizontal-list" id="projects-list">
-            {projects.map((project) => (
-              <VPCard key={project.name} {...project} />
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: (index + 2) * 0.2,
+                }}
+              >
+                <VPCard key={project.name} {...project} />
+              </motion.div>
             ))}
           </div>
           <Scroller
@@ -54,15 +80,24 @@ export default function Portfolio({ id }) {
           />
           <div className="highlighted-project">
             <div className="highlighted-project-header">
-              <Typography
-                className="highlighted-project-header-heading"
-                component={"div"}
-                variant="h3"
-                color={"var(--primary)"}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ ...transition, delay: delay + 2 }}
               >
-                Gamer's Utopia
-              </Typography>
-              <div
+                <Typography
+                  className="highlighted-project-header-heading"
+                  component={"div"}
+                  variant="h3"
+                  color={"var(--primary)"}
+                >
+                  Gamer's Utopia
+                </Typography>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ ...transition, delay: delay + 2 + 0.2 }}
                 className="icon-button button"
                 style={{
                   width: "50px",
@@ -78,18 +113,24 @@ export default function Portfolio({ id }) {
                     height: "30px",
                   }}
                 />
-              </div>
+              </motion.div>
             </div>
-            <Typography
-              className="highlighted-project-description"
-              component={"div"}
-              variant="p"
-              color={"var(--secondary)"}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ ...transition, delay: delay + 2 + 0.4 }}
             >
-              Gamer's Utopia: The ultimate social app for gamers. Compare
-              different game prices, get personalized game recommendations via
-              machine learning, and enjoy real-time chat—all in one place.
-            </Typography>
+              <Typography
+                className="highlighted-project-description"
+                component={"div"}
+                variant="p"
+                color={"var(--secondary)"}
+              >
+                Gamer's Utopia: The ultimate social app for gamers. Compare
+                different game prices, get personalized game recommendations via
+                machine learning, and enjoy real-time chat—all in one place.
+              </Typography>
+            </motion.div>
           </div>
         </div>
       </div>

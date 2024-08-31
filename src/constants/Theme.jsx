@@ -10,8 +10,17 @@ export const MyThemeProvider = ({ children }) => {
   const initialAccentColor =
     parseInt(localStorage.getItem("accentColor"), 10) || 0;
 
-  // Animations Delay
+  // Animations
   const delay = 0.5;
+  const transition = {
+    duration: 0.5,
+    type: "spring",
+    damping: 5,
+    stiffness: 100,
+    delay: delay,
+  };
+
+  const newUser = localStorage.getItem("newUser") === "true";
 
   const [light, setLight] = useState(initialLight);
   const [accentColor, setAccentColor] = useState(initialAccentColor);
@@ -34,11 +43,11 @@ export const MyThemeProvider = ({ children }) => {
   }, [accentColor, light]);
 
   useEffect(() => {
+    localStorage.setItem("newUser", false);
+  }, [newUser]);
+
+  useEffect(() => {
     document.documentElement.style.setProperty("--primary", colors?.primary);
-    document.documentElement.style.setProperty(
-      "--primary-fixed",
-      colors?.primaryFixed
-    );
     document.documentElement.style.setProperty(
       "--on-primary-container",
       colors?.onPrimaryContainer
@@ -50,10 +59,6 @@ export const MyThemeProvider = ({ children }) => {
     document.documentElement.style.setProperty(
       "--secondary",
       colors?.secondary
-    );
-    document.documentElement.style.setProperty(
-      "--secondary-fixed",
-      colors?.secondaryFixed
     );
     document.documentElement.style.setProperty(
       "--secondary-container",
@@ -85,6 +90,8 @@ export const MyThemeProvider = ({ children }) => {
         colors,
         windowWidth,
         delay,
+        newUser,
+        transition,
       }}
     >
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
