@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Typography } from "@mui/material";
 import { useTheme } from "../constants/Theme";
-import VPCard from "../components/VPCard";
 import Scroller from "../components/Scroller";
 import CheckBoxGroup from "../components/CheckBoxGroup";
 import { ArrowForward } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import ProjectModal from "../components/ProjectModal";
 
 export default function Portfolio({ id }) {
   const { colors, transition, delay } = useTheme();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <div className="wrapper" id={id}>
       <div className="wrapper-content-simple">
@@ -24,8 +27,9 @@ export default function Portfolio({ id }) {
                 component={"div"}
                 variant="h3"
                 style={{ maxWidth: "500px" }}
+                className={"section-header"}
               >
-                Let's have a look at our{" "}
+                Let's have a look at my{" "}
                 <span style={{ color: colors?.primary, fontWeight: "bold" }}>
                   Portfolio
                 </span>
@@ -65,7 +69,11 @@ export default function Portfolio({ id }) {
                   delay: (index + 2) * 0.2,
                 }}
               >
-                <VPCard key={project.name} {...project} />
+                <ProjectModal
+                  name={project.name}
+                  image={project.image}
+                  screen={project.screen}
+                />
               </motion.div>
             ))}
           </div>
@@ -140,27 +148,33 @@ export default function Portfolio({ id }) {
 
 const projects = [
   {
-    name: "Project 1",
+    name: "Old Porfolio",
     image: "/temp.png",
+    screen: "/project.mov",
   },
   {
     name: "Project 2",
     image: "/temp.png",
+    screen: "/project.mov",
   },
   {
     name: "Project 3",
     image: "/temp.png",
+    screen: "/project.mov",
   },
   {
     name: "Project 4",
     image: "/temp.png",
+    screen: "/project.mov",
   },
   {
     name: "Project 5",
     image: "/temp.png",
+    screen: "/project.mov",
   },
   {
     name: "Project 6",
     image: "/temp.png",
+    screen: "/project.mov",
   },
 ];

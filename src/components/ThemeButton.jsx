@@ -56,8 +56,8 @@ export default function ThemeButton() {
       name: "Mid Green",
     },
     {
-      icon: <ThemeColorDiv color={"pink"} />,
-      name: "Pink",
+      icon: <ThemeColorDiv color={"black"} />,
+      name: "Black",
     },
   ];
 

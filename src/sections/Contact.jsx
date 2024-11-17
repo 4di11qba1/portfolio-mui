@@ -39,6 +39,7 @@ export default function Contact({ id }) {
                 component={"div"}
                 variant="h3"
                 style={{ maxWidth: "600px" }}
+                className={"section-header"}
               >
                 Have an Awesome Project Idea?{" "}
                 <span style={{ color: colors?.primary, fontWeight: "bold" }}>
@@ -50,7 +51,7 @@ export default function Contact({ id }) {
           <Input
             color={colors?.secondary}
             iconBGColor={colors?.onSecondary}
-            text={"Send us You Email. We Will Contact You ASAP."}
+            text={"Send Me Your Email. I Will Contact You ASAP."}
             buttonText={"Send"}
           />
           <div className="mail-achievements">

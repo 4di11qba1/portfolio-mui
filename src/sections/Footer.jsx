@@ -6,7 +6,7 @@ import Input from "../components/Input";
 import { Send } from "@mui/icons-material";
 import { motion } from "framer-motion";
 
-export default function Footer({ sections, id }) {
+export default function Footer({ sections, id, scrollToSection }) {
   const { colors, windowWidth, delay, transition } = useTheme();
   return (
     <div
@@ -32,7 +32,11 @@ export default function Footer({ sections, id }) {
             exit={{ opacity: 0, x: 100 }}
             transition={{ delay: delay, ...transition }}
           >
-            <Typography component={"div"} variant="h3">
+            <Typography
+              component={"div"}
+              variant="h3"
+              className={"section-header"}
+            >
               <span style={{ color: colors?.primary, fontWeight: "bold" }}>
                 Let's Connect
               </span>
@@ -86,14 +90,14 @@ export default function Footer({ sections, id }) {
                 variant="p"
                 sx={{ fontWeight: "normal", color: colors?.secondary }}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-                esse nam, dolore tenetur pariatur repudiandae consequatur
-                molestiae, impedit quam consectetur at provident? Dolor,
-                architecto! Nam tempora ipsum vitae est veritatis. Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Culpa esse nam,
-                dolore tenetur pariatur repudiandae consequatur molestiae,
-                impedit quam consectetur at provident? Dolor, architecto! Nam
-                tempora ipsum vitae est veritatis.
+                Why choose me? I combine deep expertise in React, React Native,
+                Python, Django, Flask, and the MERN stack with cutting-edge
+                skills in HTML, CSS, and JavaScript. I blend innovation with
+                technical prowess to deliver seamless, high-performance
+                applications. From crafting engaging web experiences to
+                harnessing the power of machine learning and AI, I turn complex
+                challenges into elegant solutions. Partner with me to transform
+                your vision into impactful, future-ready technology.
               </Typography>
             </motion.div>
           </div>
@@ -115,9 +119,13 @@ export default function Footer({ sections, id }) {
               {sections.map(
                 (section, index) =>
                   section.name && (
-                    <motion.a
+                    <motion.div
                       key={index}
-                      style={{ fontWeight: "normal", cursor: "pointer" }}
+                      style={{
+                        fontWeight: "normal",
+                        cursor: "pointer",
+                        color: colors?.secondary,
+                      }}
                       href={section.path}
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -126,9 +134,10 @@ export default function Footer({ sections, id }) {
                         delay: delay + 0.3 + index * 0.2,
                         ...transition,
                       }}
+                      onClick={() => scrollToSection(section.path)}
                     >
                       {section.name}
-                    </motion.a>
+                    </motion.div>
                   )
               )}
             </div>

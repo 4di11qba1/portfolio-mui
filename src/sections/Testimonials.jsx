@@ -31,10 +31,11 @@ export default function Testimonials({ id }) {
                   component={"div"}
                   variant="h3"
                   style={{ maxWidth: "500px" }}
+                  className={"section-header"}
                 >
                   Testimonials That Speak to{" "}
                   <span style={{ color: colors?.primary, fontWeight: "bold" }}>
-                    Our Results
+                    My Results
                   </span>
                 </Typography>
               </motion.div>
@@ -49,9 +50,9 @@ export default function Testimonials({ id }) {
                   className="testimonials-description"
                   style={{ maxWidth: "500px" }}
                 >
-                  Don’t just take our word for it—hear from those who’ve
-                  experienced our innovation firsthand. Discover why businesses
-                  choose us to bring their visions to life.
+                  Don’t just take my word for it—hear from those who’ve
+                  experienced my innovation firsthand. Discover why businesses
+                  choose me to bring their visions to life.
                 </Typography>
               </motion.div>
             </div>

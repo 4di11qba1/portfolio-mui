@@ -14,20 +14,20 @@ function About({ id }) {
                 <div className="ltrans-container-content-inner">
                   <div className="ltrans-title">
                     <p className="ltrans-head">
-                      Why <span>Hire Us</span>?
+                      Why <span>Hire Me</span>?
                     </p>
                   </div>
                   <div className="ltrans-par">
                     <p className="ltrans-p">
-                      Why choose us? Our team combines deep expertise in React,
-                      React Native, Python, Django, Flask, and the MERN stack
-                      with cutting-edge skills in HTML, CSS, and JavaScript. We
-                      blend innovation with technical prowess to deliver
-                      seamless, high-performance applications. From crafting
-                      engaging web experiences to harnessing the power of
-                      machine learning and AI, we turn complex challenges into
-                      elegant solutions. Partner with us to transform your
-                      vision into impactful, future-ready technology.
+                      Why choose me? I combine deep expertise in React, React
+                      Native, Python, Django, Flask, and the MERN stack with
+                      cutting-edge skills in HTML, CSS, and JavaScript. I blend
+                      innovation with technical prowess to deliver seamless,
+                      high-performance applications. From crafting engaging web
+                      experiences to harnessing the power of machine learning
+                      and AI, I turn complex challenges into elegant solutions.
+                      Partner with me to transform your vision into impactful,
+                      future-ready technology.
                     </p>
                     <div className="about-stats">
                       <Stats count={"10"} desc={"Projects Completed"} />
@@ -48,7 +48,7 @@ function About({ id }) {
                         }}
                       >
                         {" "}
-                        Hire Us{" "}
+                        Hire Me{" "}
                       </Button>
                     </div>
                   </div>

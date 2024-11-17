@@ -89,6 +89,16 @@ const lightColors = [
     onSecondary: "#FFFFFF",
     surfaceContainer: "#EAEFE9",
   },
+  {
+    // Black
+    primary: "#000000",
+    onPrimaryContainer: "#0E0E0E",
+    primaryContainer: "#8D8D8D",
+    secondary: "#545454",
+    secondaryContainer: "#CDCDCD",
+    onSecondary: "#EEEEEE",
+    surfaceContainer: "#DDDDDD",
+  },
 ];
 
 const darkColors = [
@@ -181,6 +191,16 @@ const darkColors = [
     secondaryContainer: "#364B40",
     onSecondary: "#1F3629",
     surfaceContainer: "#1B211D",
+  },
+  {
+    // Black
+    primary: "#FFFFFF",
+    onPrimaryContainer: "#F1F1F1",
+    primaryContainer: "#727272",
+    secondary: "#ABABAB",
+    secondaryContainer: "#323232",
+    onSecondary: "#111111",
+    surfaceContainer: "#222222",
   },
 ];
 

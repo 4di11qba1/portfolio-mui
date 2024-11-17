@@ -27,8 +27,7 @@ function Home({ id }) {
         exit={{ opacity: 0, scale: 0.5 }}
       >
         {/* eslint-disable-next-line react/no-unescaped-entities */}
-        We're <span>NexEnt Labs</span>, <br /> your top choice for innovative
-        software solutions!
+        I'm <span>Adil</span>, <br /> turning your ideas into impactful code!
       </motion.p>
       <div className="home-rating">
         <motion.div
@@ -40,7 +39,7 @@ function Home({ id }) {
         >
           <FormatQuote className="home-icon" />
           <p>
-            NexEnt team's exceptional skills ensure our website’s success.
+            Adil's exceptional skills ensure our website’s success.
             <br />
             Highly Recommended.
           </p>

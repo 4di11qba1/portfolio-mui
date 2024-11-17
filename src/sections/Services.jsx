@@ -34,10 +34,14 @@ const services = [
 ];
 
 function Services({ id }) {
-  const { colors, delay } = useTheme();
+  const { colors, delay, windowWidth, windowHeight } = useTheme();
 
   return (
-    <div className="wrapper observer" id={id}>
+    <div
+      className="wrapper observer"
+      id={id}
+      style={{ marginTop: windowHeight > windowWidth ? "20px" : "0px" }}
+    >
       <motion.div
         className="wrapper-content"
         transition={{ duration: 0.5, delay: delay, ease: "linear" }}
@@ -51,8 +55,12 @@ function Services({ id }) {
                 exit={{ x: -200 }}
                 transition={{ duration: 0.5, delay: delay, ease: "linear" }}
               >
-                <Typography component={"div"} variant="h3">
-                  Our{" "}
+                <Typography
+                  component={"div"}
+                  variant="h3"
+                  className={"section-header"}
+                >
+                  My{" "}
                   <span style={{ color: colors?.primary, fontWeight: "bold" }}>
                     Services
                   </span>
@@ -64,7 +72,7 @@ function Services({ id }) {
                 className="wrapper-header-text"
               >
                 From creating unique UI/UX designs that enhance user experiences
-                to developing custom solutions, we ensure seamless integration
+                to developing custom solutions, I ensure seamless integration
                 across platforms.
               </Typography>
             </div>

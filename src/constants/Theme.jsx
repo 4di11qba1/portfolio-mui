@@ -28,9 +28,13 @@ export const MyThemeProvider = ({ children }) => {
     getColors(initialLight, initialAccentColor)
   );
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
   useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
+    };
 
     window.addEventListener("resize", handleResize);
 
@@ -89,6 +93,7 @@ export const MyThemeProvider = ({ children }) => {
         setAccentColor,
         colors,
         windowWidth,
+        windowHeight,
         delay,
         newUser,
         transition,

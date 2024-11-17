@@ -147,7 +147,6 @@ function App() {
         >
           <div className="app">
             {/* Floating Buttons */}
-            {/* <FloatingButton /> */}
             <ThemeButton />
             <MoveToTop moveToTop={moveToTop} />
 
@@ -208,7 +207,7 @@ function App() {
           </div>
           <LazyLoad>
             <div ref={contactRef}>
-              <Footer sections={sections} />
+              <Footer sections={sections} scrollToSection={scrollToSection} />
             </div>
           </LazyLoad>
           {/* <Test /> */}
