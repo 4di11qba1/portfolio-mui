@@ -3,7 +3,7 @@ import { ListItemText } from "@mui/material";
 import { Star } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
-function VPCard({ name, image }) {
+function VPCard({ name, desc, image }) {
   return (
     <div
       className="vp-card"
@@ -15,7 +15,7 @@ function VPCard({ name, image }) {
       <div className="vp-card-content">
         <ListItemText
           primary={name}
-          secondary={name}
+          secondary={desc}
           sx={{
             "& .MuiTypography-root": { color: "var(--secondary)" },
           }}

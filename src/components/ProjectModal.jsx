@@ -54,13 +54,13 @@ const modalStyle = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 900,
-  bgcolor: "transparent",
+  bgcolor: "var(--secondary-container)",
   borderRadius: "30px",
-  //   boxShadow: 24,
+  boxShadow: 24,
   p: 4,
 };
 
-function ProjectModal({ name, image, screen }) {
+function ProjectModal({ name, image, screen, link, desc }) {
   const [open, setOpen] = useState(false);
   const [src] = useState(screen);
 
@@ -74,7 +74,7 @@ function ProjectModal({ name, image, screen }) {
         style={{ textAlign: "center", marginTop: "50px" }}
         onClick={handleOpen}
       >
-        <VPCard key={name} name={name} image={image} />
+        <VPCard key={name} name={name} desc={desc} image={image} />
       </div>
 
       {/* Modal */}
@@ -109,29 +109,29 @@ function ProjectModal({ name, image, screen }) {
             >
               {name}
             </Typography>
-            {/* <Typography
-                id="spring-modal-description"
-                variant="body1"
-                component="div"
-                style={{ marginBottom: "20px" }}
-              >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure
-                magni a cupiditate error eaque consectetur ratione dolore
-                molestiae perferendis enim alias suscipit repellendus deleniti
-                voluptate earum illo quibusdam, quo similique?
-              </Typography> */}
-            <MacbookPro width={900} orientation="landscape" color="black">
-              <video
-                title="showcase"
-                src={src}
-                autoPlay
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  border: "none",
-                }}
-              />
-            </MacbookPro>
+
+            <a href={link} target="_blank">
+              <MacbookPro width={900} orientation="landscape" color="black">
+                <video
+                  title={name}
+                  src={src}
+                  autoPlay
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                  }}
+                />
+              </MacbookPro>
+            </a>
+            <Typography
+              id="spring-modal-description"
+              variant="body1"
+              component="div"
+              style={{ marginTop: "20px", textAlign: "center" }}
+            >
+              {desc}
+            </Typography>
           </Box>
         </Fade>
       </Modal>

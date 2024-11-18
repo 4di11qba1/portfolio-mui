@@ -69,11 +69,7 @@ export default function Portfolio({ id }) {
                   delay: (index + 2) * 0.2,
                 }}
               >
-                <ProjectModal
-                  name={project.name}
-                  image={project.image}
-                  screen={project.screen}
-                />
+                <ProjectModal {...project} />
               </motion.div>
             ))}
           </div>
@@ -149,32 +145,44 @@ export default function Portfolio({ id }) {
 const projects = [
   {
     name: "Old Porfolio",
-    image: "/temp.png",
-    screen: "/project.mov",
+    image: "/OldPortfolio.png",
+    screen: "/OldPortfolio.mp4",
+    link: "https://portfolio-4di11qba1.web.app",
+    desc: "My Old Portfolio showcasing my designing skills a year back.",
   },
   {
-    name: "Project 2",
-    image: "/temp.png",
-    screen: "/project.mov",
+    name: "MyBank",
+    image: "/MyBank.png",
+    screen: "/MyBank.mp4",
+    link: "/MyBank.pdf",
+    desc: "Realtime banking transactions and balance management app developed using .NET.",
   },
   {
-    name: "Project 3",
-    image: "/temp.png",
-    screen: "/project.mov",
+    name: "Classic Portfolio",
+    image: "/ClassicPortfolio.png",
+    screen: "/ClassicPortfolio.mp4",
+    link: "https://portfolio-old-6f721.web.app/",
+    desc: "My Classic Portfolio showcasing my designing skills 2 years back in the initial phase of my web development.",
   },
   {
-    name: "Project 4",
-    image: "/temp.png",
-    screen: "/project.mov",
+    name: "To Do App",
+    image: "/ToDo.png",
+    screen: "/ToDo.mp4",
+    link: "https://4di11qba1.github.io/react_to_do/",
+    desc: "To Do List App developed using ReactJS.",
   },
   {
-    name: "Project 5",
-    image: "/temp.png",
-    screen: "/project.mov",
+    name: "Web Documentation",
+    image: "/Documentation.png",
+    screen: "/Documentation.mp4",
+    link: "https://refined-github-html-preview.kidonng.workers.dev/4di11qba1/programming_documentation/raw/main/Home%20Page.html",
+    desc: "Web Documentation App developed using pure HTML/CSS during the initial phase of my programming.",
   },
   {
-    name: "Project 6",
-    image: "/temp.png",
-    screen: "/project.mov",
+    name: "Windows Web",
+    image: "/WindowsWeb.png",
+    screen: "/WindowsWeb.mp4",
+    link: "https://refined-github-html-preview.kidonng.workers.dev/4di11qba1/WindowsWeb/raw/main/WebPage/index.html",
+    desc: "Windows Desktop UI developed using BootStrap.",
   },
 ];
